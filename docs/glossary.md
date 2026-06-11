@@ -14,9 +14,9 @@ The top-level outcome of a validation attempt.
 
 A grouped reason explaining why a validation was invalid or could not be completed.
 
-## Reason Code
+## Error Code
 
-A specific machine-readable reason for a validation result. Reason codes can apply to `VALID`, `INVALID`, or `COULD NOT VALIDATE`.
+A specific machine-readable code for a validation result. Error codes can apply to `VALID`, `INVALID`, or `COULD NOT VALIDATE`.
 
 ## Sitewide
 

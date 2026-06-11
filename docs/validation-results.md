@@ -13,14 +13,12 @@ Validation reached a conclusion and the promotion or promo code is valid.
 - Code applies without error and the discount or benefit is visible
 - Promotion matches the advertised offer
 - Promo code is confirmed valid, but only for a different product or product group
-- Promotion or promo code is confirmed valid, but the tested product is out of stock
 
 **Error category:** none
 
-**Optional reason codes**
+**Optional error codes**
 
 - `PROMO_CODE_VALID_FOR_DIFFERENT_PRODUCT`
-- `PRODUCT_OUT_OF_STOCK`
 
 ## INVALID
 
@@ -31,7 +29,7 @@ Validation reached a conclusion, but the promotion did not deliver the advertise
 - Code is rejected
 - No discount is applied
 - Promotion conditions appear to be met, but the benefit is not received
-- Product or promotion is no longer available
+- Promotion is no longer available
 
 **Parent error category**
 
@@ -46,9 +44,14 @@ Validation could not reach a conclusion due to technical, environmental, website
 - Site blocks automation
 - Page fails to load
 - Website is inaccessible
+- Product is unavailable or out of stock
 - Internal validation systems fail
 
 **Parent error categories**
 
 - Website Issue
 - Automation / Infrastructure Issue
+
+**Example error codes**
+
+- `PRODUCT_OUT_OF_STOCK`

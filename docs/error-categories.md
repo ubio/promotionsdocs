@@ -1,19 +1,18 @@
-# Reason Codes
+# Error Codes
 
-Reason codes explain the specific outcome of a validation.
+Error codes explain the specific outcome of a validation.
 
-`VALID` validation results can have reason codes. They do not have error categories.
+`VALID` validation results can have error codes. They do not have error categories.
 
-## Valid / Product Context
+## Valid Codes
 
 **Parent outcome:** `VALID`
 
-Use when UBIO can confirm that the promotion or promo code is valid, but the tested product context explains why the offer could not be applied cleanly.
+Use when UBIO can confirm that the promotion or promo code is valid, but the tested product context still matters.
 
-| Reason Code | Meaning |
+| Error Code | Meaning |
 | --- | --- |
 | `PROMO_CODE_VALID_FOR_DIFFERENT_PRODUCT` | Promo code is valid, but only for a different product or product group than the one being validated. |
-| `PRODUCT_OUT_OF_STOCK` | Promotion or promo code is valid, but the tested product is unavailable or out of stock. |
 
 ## Merchant / Promotion Issue
 
@@ -21,7 +20,7 @@ Use when UBIO can confirm that the promotion or promo code is valid, but the tes
 
 Use when validation reached a conclusion, but the promotion itself was not usable or did not provide the advertised benefit.
 
-| Reason Code | Meaning |
+| Error Code | Meaning |
 | --- | --- |
 | `PAGE_IS_INACTIVE` | Promotion page is inactive or unavailable. |
 | `PROMO_CODE_NOT_APPLICABLE_TO_THIS_PRODUCT` | Promotion terms do not include the selected product. |
@@ -35,7 +34,7 @@ Use when validation reached a conclusion, but the promotion itself was not usabl
 
 Use when validation could not reach a conclusion because the website prevented a conclusive result.
 
-| Reason Code | Meaning |
+| Error Code | Meaning |
 | --- | --- |
 | `WEBSITE_LOADING_ISSUE` | Website did not become usable after reasonable waits. |
 | `WEBSITE_HTTP_ERROR` | Website returned an HTTP or server error. |
@@ -43,6 +42,7 @@ Use when validation could not reach a conclusion because the website prevented a
 | `WEBSITE_OTHER_ISSUES` | Other website issue prevented validation. |
 | `BOT_DETECTION` | Website blocked or challenged automation. |
 | `ACCOUNT_BLOCKED` | Account access was blocked or restricted. |
+| `PRODUCT_OUT_OF_STOCK` | The selected product was unavailable or out of stock, so validation could not reach a conclusion. |
 
 ## Automation / Infrastructure Issue
 
@@ -50,7 +50,7 @@ Use when validation could not reach a conclusion because the website prevented a
 
 Use when validation could not reach a conclusion because of failures in the validation platform, automation systems, infrastructure, or supporting services.
 
-| Reason Code | Meaning |
+| Error Code | Meaning |
 | --- | --- |
 | `AGENT_ERROR` | Validation agent failure. |
 | `A3_ERROR` | A3/platform failure. |

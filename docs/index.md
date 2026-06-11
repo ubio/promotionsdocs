@@ -8,13 +8,13 @@ A successful validation does not necessarily mean a valid promotion. A validatio
 
 ![Validation decision tree showing VALID, INVALID, and COULD NOT VALIDATE outcomes](/images/validation-decision-tree.png)
 
-## Valid Reason Codes
+## Valid Error Codes
 
-`VALID` results can include a reason code when UBIO can confirm the promotion or promo code is valid, but the tested product context explains why the offer could not be applied cleanly.
+`VALID` results can include an error code when UBIO can confirm the promotion or promo code is valid, but the tested product context still matters. These codes do not make the result invalid.
 
-| Category | Meaning | Example codes |
-| --- | --- | --- |
-| Valid / Product Context | Promotion or promo code is valid, but the tested product context affects redemption. | `PROMO_CODE_VALID_FOR_DIFFERENT_PRODUCT`<br>`PRODUCT_OUT_OF_STOCK` |
+| Error Code | Meaning |
+| --- | --- |
+| `PROMO_CODE_VALID_FOR_DIFFERENT_PRODUCT` | Promo code is valid, but only for a different product or product group than the one being validated. |
 
 ## Invalid Reasons
 
@@ -26,7 +26,7 @@ A successful validation does not necessarily mean a valid promotion. A validatio
 
 | Category | Meaning | Example codes |
 | --- | --- | --- |
-| Website Issue | Merchant site prevented validation. | `WEBSITE_LOADING_ISSUE`<br>`BOT_DETECTION`<br>`ACCOUNT_BLOCKED` |
+| Website Issue | Merchant site prevented validation. | `WEBSITE_LOADING_ISSUE`<br>`BOT_DETECTION`<br>`ACCOUNT_BLOCKED`<br>`PRODUCT_OUT_OF_STOCK` |
 | Automation / Infrastructure Issue | UBIO validation system could not complete the run. | `AGENT_ERROR`<br>`PROXY_CONNECTION_ISSUE`<br>`NETWORK_UNREACHABLE` |
 
 > A validation is successful when UBIO can reach a conclusion.  
@@ -35,24 +35,24 @@ A successful validation does not necessarily mean a valid promotion. A validatio
 
 ## Framework Hierarchy
 
-Most validation outcomes follow this hierarchy:
+Most non-`VALID` outcomes follow this hierarchy:
 
 ```text
-Validation Result → Category → Reason Code
+Validation Result → Error Category → Error Code
 ```
 
 | Level | Purpose |
 | --- | --- |
 | Validation Result | The top-level outcome: `VALID`, `INVALID`, or `COULD NOT VALIDATE`. |
-| Category | The grouped reason for a result. `VALID` can have a product-context category; `INVALID` and `COULD NOT VALIDATE` use error categories. |
-| Reason Code | The specific machine-readable reason for the result. |
+| Error Category | The grouped reason for an `INVALID` or `COULD NOT VALIDATE` result. |
+| Error Code | The specific machine-readable code for the result. |
 
-`VALID` validation results can have reason codes. They do not have error categories.
+`VALID` validation results can have error codes. They do not have error categories.
 
 ## Result Summary
 
 | Validation Result | Meaning | Category |
 | --- | --- | --- |
-| `VALID` | Validation reached a conclusion and the promotion or promo code is valid. | None, or Valid / Product Context |
+| `VALID` | Validation reached a conclusion and the promotion or promo code is valid. | None |
 | `INVALID` | Validation reached a conclusion and the promotion did not work. | Merchant / Promotion Issue |
 | `COULD NOT VALIDATE` | Validation could not reach a conclusion. | Website Issue or Automation / Infrastructure Issue |
