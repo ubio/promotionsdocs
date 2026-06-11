@@ -1,0 +1,13 @@
+{
+  "name": "promotionsdocs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VuePress documentation for the UBIO promotion validation framework.",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "1.9.10"
+  }
+}
