@@ -4850,13 +4850,65 @@ html:not(.dark) .VPImage.dark[data-v-8426fc1a] {
   --vp-c-brand-1: #235c6f;
   --vp-c-brand-2: #2f7f96;
   --vp-c-brand-3: #4aa0b8;
+  --vp-sidebar-width: 19rem;
+  --vp-nav-height: 3.6rem;
+  --vp-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.VPNav {
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.VPNavBar .title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.VPSidebar {
+  background: #f6f6f7;
+  border-right: 1px solid var(--vp-c-divider);
+}
+
+.VPSidebarItem.level-0 > .item > .text {
+  font-weight: 600;
+}
+
+.VPDoc:not(.has-sidebar) .container,
+.VPDoc.has-aside .content-container,
+.VPDoc .content-container {
+  max-width: 860px;
+}
+
+.VPDoc.has-aside .content {
+  padding-right: 0;
+}
+
+.vp-doc {
+  color: #2c3e50;
+  line-height: 1.7;
+}
+
+.vp-doc h1 {
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  line-height: 1.25;
+}
+
+.vp-doc h2 {
+  margin-top: 2.25rem;
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 1.5rem;
+}
+
+.vp-doc p {
+  margin: 1rem 0;
 }
 
 .vp-doc img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 1.5rem auto;
+  margin: 1.5rem 0;
   border: 1px solid var(--vp-c-divider);
   border-radius: 6px;
 }
@@ -4864,6 +4916,18 @@ html:not(.dark) .VPImage.dark[data-v-8426fc1a] {
 .vp-doc table {
   display: table;
   width: 100%;
+}
+
+.vp-doc blockquote {
+  border-left: 0.25rem solid var(--vp-c-brand-2);
+  color: #2c3e50;
+  background: #f8fbfc;
+  padding: 0.75rem 1rem;
+}
+
+.vp-doc code {
+  color: #235c6f;
+  background: #eef4f6;
 }
 
 .VPLocalSearchBox[data-v-ce626c7c] {

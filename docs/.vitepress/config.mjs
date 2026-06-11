@@ -2,6 +2,7 @@ export default {
   lang: 'en-US',
   title: 'Promotion Validation Framework',
   description: 'How UBIO validates promotions.',
+  appearance: false,
   themeConfig: {
     nav: [
       { text: 'Framework', link: '/' },
@@ -22,5 +23,6 @@ export default {
     search: {
       provider: 'local',
     },
+    outline: false,
   },
 }
