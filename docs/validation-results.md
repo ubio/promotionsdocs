@@ -12,13 +12,13 @@ Validation reached a conclusion and the promotion or promo code is valid.
 
 - Code applies without error and the discount or benefit is visible
 - Promotion matches the advertised offer
-- Promo code is confirmed valid, but only for a different product or product group
+- Promotion or promo code is confirmed valid, but the supplied link, product, or applicability data needs correction
 
 **Error category:** none
 
 **Optional error codes**
 
-- `PROMO_CODE_VALID_FOR_DIFFERENT_PRODUCT`
+- `VALID_WITH_CORRECTIONS`
 
 ## INVALID
 

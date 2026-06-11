@@ -10,11 +10,11 @@ A successful validation does not necessarily mean a valid promotion. A validatio
 
 ## Valid Error Codes
 
-`VALID` results can include an error code when UBIO can confirm the promotion or promo code is valid, but the tested product context still matters. These codes do not make the result invalid.
+`VALID` results can include an error code when UBIO can confirm the promotion or promo code is valid, but the supplied data needs correction. For example, the link, product, or predicted applicability context may not match where the promotion actually works. These codes do not make the result invalid.
 
 | Error Code | Meaning |
 | --- | --- |
-| `PROMO_CODE_VALID_FOR_DIFFERENT_PRODUCT` | Promo code is valid, but only for a different product or product group than the one being validated. |
+| `VALID_WITH_CORRECTIONS` | Promotion or promo code is valid, but the supplied link, product, or applicability data needs correction. |
 
 ## Invalid Reasons
 

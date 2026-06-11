@@ -8,11 +8,11 @@ Error codes explain the specific outcome of a validation.
 
 **Parent outcome:** `VALID`
 
-Use when UBIO can confirm that the promotion or promo code is valid, but the tested product context still matters.
+Use when UBIO can confirm that the promotion or promo code is valid, but the supplied data needs correction. For example, the link, product, or predicted applicability context may not match where the promotion actually works.
 
 | Error Code | Meaning |
 | --- | --- |
-| `PROMO_CODE_VALID_FOR_DIFFERENT_PRODUCT` | Promo code is valid, but only for a different product or product group than the one being validated. |
+| `VALID_WITH_CORRECTIONS` | Promotion or promo code is valid, but the supplied link, product, or applicability data needs correction. |
 
 ## Merchant / Promotion Issue
 
