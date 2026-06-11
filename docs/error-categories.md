@@ -1,10 +1,19 @@
-# Error Categories
+# Reason Codes
 
-Error categories explain why a validation was `INVALID` or `COULD NOT VALIDATE`.
+Reason codes explain the specific outcome of a validation.
 
-They do not apply to `VALID` validation results.
+`VALID` validation results can have reason codes. They do not have error categories.
 
-A promo code can be valid in the merchant system while the validation result is still `INVALID` for the tested product. In that case, use a Merchant / Promotion Issue error code that explains the product-level mismatch.
+## Valid / Product Context
+
+**Parent outcome:** `VALID`
+
+Use when UBIO can confirm that the promotion or promo code is valid, but the tested product context explains why the offer could not be applied cleanly.
+
+| Reason Code | Meaning |
+| --- | --- |
+| `PROMO_CODE_VALID_FOR_DIFFERENT_PRODUCT` | Promo code is valid, but only for a different product or product group than the one being validated. |
+| `PRODUCT_OUT_OF_STOCK` | Promotion or promo code is valid, but the tested product is unavailable or out of stock. |
 
 ## Merchant / Promotion Issue
 
@@ -12,12 +21,10 @@ A promo code can be valid in the merchant system while the validation result is 
 
 Use when validation reached a conclusion, but the promotion itself was not usable or did not provide the advertised benefit.
 
-| Error Code | Meaning |
+| Reason Code | Meaning |
 | --- | --- |
 | `PAGE_IS_INACTIVE` | Promotion page is inactive or unavailable. |
-| `PRODUCT_OUT_OF_STOCK` | Product is unavailable or out of stock. |
 | `PROMO_CODE_NOT_APPLICABLE_TO_THIS_PRODUCT` | Promotion terms do not include the selected product. |
-| `PROMO_CODE_VALID_FOR_DIFFERENT_PRODUCT` | Promo code is valid, but only for a different product or product group than the one being validated. |
 | `PROMO_CODE_IS_NOT_WORKING` | Promo code is rejected or has no effect. |
 | `FREE_SHIPPING_IS_NOT_APPLIED` | Free shipping benefit was not received. |
 | `DISCOUNT_IS_NOT_APPLIED` | Discount benefit was not received. |
@@ -28,7 +35,7 @@ Use when validation reached a conclusion, but the promotion itself was not usabl
 
 Use when validation could not reach a conclusion because the website prevented a conclusive result.
 
-| Error Code | Meaning |
+| Reason Code | Meaning |
 | --- | --- |
 | `WEBSITE_LOADING_ISSUE` | Website did not become usable after reasonable waits. |
 | `WEBSITE_HTTP_ERROR` | Website returned an HTTP or server error. |
@@ -43,7 +50,7 @@ Use when validation could not reach a conclusion because the website prevented a
 
 Use when validation could not reach a conclusion because of failures in the validation platform, automation systems, infrastructure, or supporting services.
 
-| Error Code | Meaning |
+| Reason Code | Meaning |
 | --- | --- |
 | `AGENT_ERROR` | Validation agent failure. |
 | `A3_ERROR` | A3/platform failure. |

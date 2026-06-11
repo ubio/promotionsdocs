@@ -14,7 +14,7 @@ export default {
         items: [
           { text: 'Overview', link: '/' },
           { text: 'Validation Results', link: '/validation-results' },
-          { text: 'Error Categories', link: '/error-categories' },
+          { text: 'Reason Codes', link: '/error-categories' },
           { text: 'Reporting Format', link: '/reporting-format' },
           { text: 'Glossary', link: '/glossary' },
         ],
